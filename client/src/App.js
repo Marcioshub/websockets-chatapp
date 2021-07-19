@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    backgroundColor: "ghostwhite",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -224,9 +225,13 @@ function App() {
           </>
         </div>
       ) : (
-        <>
+        <div style={{ backgroundColor: "ghostwhite" }}>
           {/** Enter/create username **/}
-          <Container component="main" maxWidth="xs">
+          <Container
+            component="main"
+            maxWidth="xs"
+            style={{ backgroundColor: "ghostwhite" }}
+          >
             <CssBaseline />
             <div className={classes.paperUsername}>
               <Typography component="h1" variant="h5">
@@ -267,7 +272,7 @@ function App() {
               </form>
             </div>
           </Container>
-        </>
+        </div>
       )}
     </div>
   );
