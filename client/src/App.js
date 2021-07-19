@@ -20,11 +20,10 @@ import "./App.css";
 
 // connect to websocket port on server
 const client = new W3CWebSocket(
-  `ws://${process.env.REACT_APP_SERVER}:${process.env.REACT_APP_SERVER_PORT}`
+  process.env.REACT_APP_MODE === "prod"
+    ? `wss://${process.env.REACT_APP_SERVER}:${process.env.REACT_APP_SERVER_PORT}`
+    : `ws://${process.env.REACT_APP_SERVER}:${process.env.REACT_APP_SERVER_PORT}`
 );
-// const client = new W3CWebSocket(
-//   `ws://127.0.0.1:${process.env.REACT_APP_SERVER_PORT}`
-// );
 
 const useStyles = makeStyles((theme) => ({
   paperUsername: {
